@@ -1,6 +1,5 @@
 /* --- Variables y Reset --- */
 :root {
-    --bg-black: #000000;
     --bg-dark: #0a0a0a;
     --text-main: #e0e0e0;
     --tech-yellow: #ffca28; /* El amarillo de tu logo */
@@ -18,25 +17,16 @@
 }
 
 body {
-    background-color: var();
+    background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-body);
-}
-header{
+    height: 100vh;
+    overflow: hidden; /* Evita scrollbars si no son necesarios */
     display: flex;
     justify-content: center;
-    background-color: var(--bg-black);
-    width: 100%;
-    border-bottom: 1px solid #3c3737;
-    clear: both;
+    align-items: center;
 }
-.tabs-area{
-    display: flex;
-    justify-content: center;
-    background-color: var(--bg-black);
-    width: 100%;
-    padding: 15px 0 0;
-}
+
 /* --- Fondo de Partículas --- */
 #particles-js {
     position: absolute;
@@ -67,25 +57,28 @@ header{
 .logo-container {
     display: flex;
     align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    gap: 5px;
     height: auto;
+    padding: 10px 0;
     font-family: 'Open Sans', sans-serif;
-    padding: 10px;
-    width: 80%;
 }
 
 .logo-chip {
-    width: 60px;
+    width: 100px;
     height: auto;
+    margin-top: 10px;
 }
 
 .logo-text {
     font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 3.5rem;
     font-weight: 300;
+    letter-spacing: -1.5px; 
     color: #ffffff;
     display: flex;
-    line-height: 1 ;
-    margin-bottom: 6px;
+    line-height: 2.5;
 }
 
 .typewriter-text {
@@ -103,15 +96,16 @@ header{
     font-family: var(--font-tech);
     font-size: 1rem;
     color: #888;
+    margin-bottom: 40px;
     letter-spacing: 1px;
-    padding: 0 10px;
 }
 
 /* --- Grid de Servicios --- */
 .services-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    width: 80%;
+    margin-bottom: 50px;
 }
 .service-card::before {
     content: "";
@@ -125,16 +119,22 @@ header{
 }
 
 .service-card {
-    display: flex;
+    /* Fondo con transparencia baja para que el blur trabaje */
     background: rgba(255, 255, 255, 0.03); 
+    
+    /* El toque secreto: Desenfoque de fondo */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    border-radius: 16px 16px 0 0;
+
+    /* Borde sutil que parece el canto de un vidrio */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    border-radius: 16px;
     padding: 30px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: left;
-    flex: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Efecto cuando pasas el mouse (Hover) */

@@ -13,23 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="/images/aicodigo-logo.png" alt="AICodigo Logo" class="logo-chip">
+
+    <div id="particles-js"></div>
+    
+    <main class="glass-panel">
+        <header>
+            <div class="logo-container">
+                <img src="/images/aicodigo-logo.png" alt="AICodigo Logo" class="logo-chip">
                 <h1 class="logo-text">
                     <span class="corchea">{</span><span class="typewriter-text"></span><span class="blinking-bracket">}</span>
                 </h1>
-                <p class="subtitle">|  Soluciones de Software Avanzado</p>
-        </div>
-    </header>
-    <div class="tabs-area">
+            </div>
+            <p class="subtitle">Soluciones de Software Avanzado</p>
+        </header>
+
         <section class="services-grid">
             <div class="service-card">
                 <div class="icon">📱</div>
-                <div>
-                <h3>{ Tecnología celular }</h3>
-                <p>KG/FRP bypass, Flashing, Desbloqueo. <br>Soporte remoto profesional.</p>
-                </div>
+                <h3>[ Mobile Tech ]</h3>
+                <p>Bypass KG/FRP, Flashing, Unlocking. Soporte remoto profesional.</p>
             </div>
             <div class="service-card">
                 <div class="icon">⚙️</div>
@@ -37,14 +39,20 @@
                 <p>Scripts en Python, Integración de Meta Ads API, Web Scraping.</p>
             </div>
         </section>
-    </div>
-    
-    
+
+        <footer>
+            <a href="mailto:info@aicodigo.com" class="btn-cyber">
+                <span class="btn-text">INICIAR CONEXIÓN</span>
+                <span class="btn-glitch"></span>
+            </a>
+        </footer>
+    </main>
 
     <!-- Primero cargamos la librería externa -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     
     <!-- Luego cargamos tu archivo donde configuras las partículas -->
     <script src="script.js"></script>
+</body>
 </body>
 </html>
