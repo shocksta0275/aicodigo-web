@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    line-height: 2.5;
 }
 .contenido-centrado a{
     font-size: 0.75rem;
