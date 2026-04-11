@@ -108,7 +108,7 @@ header{
     to { visibility: hidden; }
 }
 /* Media Query para celulares (pantallas de menos de 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .mobile-visible{
     display: flex;
 }
