@@ -1,12 +1,8 @@
 /* --- Variables y Reset --- */
 :root {
     --bg-black: #000000;
-    --bg-dark: #0a0a0a;
     --text-main: #e0e0e0;
     --tech-yellow: #ffca28; /* El amarillo de tu logo */
-    --tech-yellow-glow: rgba(255, 202, 40, 0.3);
-    --glass-bg: rgba(15, 15, 15, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.08);
     --font-tech: 'Fira Code', monospace;
     --font-body: 'Poppins', sans-serif;
 }
@@ -18,9 +14,28 @@
 }
 
 body {
-    background-color: var();
+    background-color: var(--bg-black);
     color: var(--text-main);
     font-family: var(--font-body);
+}
+.contenido-centrado{
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.contenido-centrado a{
+    font-size: 0.75rem;
+    color: #ffca28;
+    padding-left: 15px;
+    text-decoration: none;
+}
+.contenido-centrado a:hover{
+    text-decoration: underline;
+}
+.f20{
+    padding-bottom: 20px;
+    font-size: 1.5rem;
 }
 header{
     display: flex;
@@ -30,38 +45,7 @@ header{
     border-bottom: 1px solid #3c3737;
     clear: both;
 }
-.tabs-area{
-    display: flex;
-    justify-content: center;
-    background-color: var(--bg-black);
-    width: 100%;
-    padding: 15px 0 0;
-}
-/* --- Fondo de Partículas --- */
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Detrás de todo */
-}
 
-/* --- Panel de Vidrio (Glassmorphism) --- */
-.glass-panel {
-    position: relative;
-    z-index: 10; /* Delante de las partículas */
-    /*background: var(--glass-bg);*/
-    backdrop-filter: blur(12px); /* El efecto de desenfoque */
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 50px;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.03);
-    text-align: center;
-}
 
 /* --- Header y Logo (Tu diseño) --- */
 .logo-container {
@@ -70,7 +54,6 @@ header{
     height: auto;
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
-    width: 80%;
 }
 
 .logo-chip {
@@ -108,84 +91,6 @@ header{
 }
 
 /* --- Grid de Servicios --- */
-.services-grid {
-    display: flex;
-    gap: 25px;
-    width: 80%;
-}
-.service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
-    pointer-events: none;
-}
-
-.service-card {
-    display: flex;
-    background: rgba(255, 255, 255, 0.03); 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    border-radius: 16px 16px 0 0;
-    padding: 30px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-align: left;
-    flex: 1;
-}
-
-/* Efecto cuando pasas el mouse (Hover) */
-.service-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: var(--tech-yellow); /* El amarillo de tu logo ilumina el borde */
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                0 0 15px var(--tech-yellow-glow);
-}
-
-.service-card .icon {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.service-card h3 {
-    font-family: var(--font-tech);
-    color: var(--tech-yellow);
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-    color: #bbb;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-/* --- Botón Cyber --- */
-.btn-cyber {
-    position: relative;
-    display: inline-block;
-    padding: 15px 40px;
-    background: transparent;
-    border: 2px solid var(--tech-yellow);
-    color: var(--tech-yellow);
-    font-family: var(--font-tech);
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 2px;
-    overflow: hidden;
-    transition: all 0.3s;
-}
-
-.btn-cyber:hover {
-    background: var(--tech-yellow);
-    color: #000;
-    box-shadow: 0 0 30px var(--tech-yellow-glow);
-}
 
 /* --- Animaciones --- */
 @keyframes blink {
@@ -213,3 +118,32 @@ header{
         gap: 10px;
     }
 }
+
+/* New animation */
+.status-box {
+            
+            padding: 20px;
+            
+        }
+
+        .loading-bar {
+            width: 250px;
+            height: 4px;
+            background: #111;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-bar-fill {
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            background: #ffca28;
+            animation: move-bar 2s ease-in-out infinite;
+        }
+
+        @keyframes move-bar {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }

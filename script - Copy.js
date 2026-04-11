@@ -61,25 +61,3 @@ window.onload = function() {
     }
 };
 });
-
-        const text = "SISTEMA EN CONSTRUCCIÓN... COMPILANDO PROYECTO...";
-        let index = 0;
-        const speed = 100; // milisegundos
-
-        function typeWriter() {
-            if (index < text.length) {
-                document.getElementById("typing-text").innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, speed);
-            } else {
-                // Reiniciar después de un tiempo para que sea cíclico
-                setTimeout(() => {
-                    document.getElementById("typing-text").innerHTML = "";
-                    index = 0;
-                    typeWriter();
-                }, 3000);
-            }
-        }
-
-        window.onload = typeWriter;
- 
