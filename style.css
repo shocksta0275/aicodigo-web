@@ -90,6 +90,16 @@ header{
     letter-spacing: 1px;
     padding: 0 10px;
 }
+.subtitle::before{
+    content: "|";
+    padding-right: 10px;
+}
+.mobile-visible{
+    display: none;
+}
+.mobile-invisible{
+    display: block;
+}
 
 /* --- Grid de Servicios --- */
 
@@ -97,27 +107,19 @@ header{
 @keyframes blink {
     to { visibility: hidden; }
 }
-
-/* Responsive simple */
-@media (max-width: 600px) {
-    .logo-text { font-size: 2rem; }
-    .glass-panel { padding: 30px; }
-}
 /* Media Query para celulares (pantallas de menos de 768px) */
 @media (max-width: 768px) {
-    .logo-text {
-        font-size: 4.5rem; /* Lo subimos de 3.5 a 4.5 solo en móviles */
-        letter-spacing: -1px; /* Ajustamos un poco el espaciado para que no se amontone */
-    }
+    .mobile-visible{
+    display: flex;
+}
+.mobile-invisible{
+    display: none;
+}
+.subtitle::before{
+    content: none;
+    padding-right: 10px;
+}
     
-    .logo-chip {
-        width: 80px; /* Opcional: si el texto crece mucho, podrías achicar un poco el chip */
-    }
-
-    .logo-container {
-        flex-direction: column; /* Opcional: si ves que el chip y el texto no caben juntos, esto los pone uno arriba del otro */
-        gap: 10px;
-    }
 }
 
 /* New animation */
