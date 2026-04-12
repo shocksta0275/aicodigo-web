@@ -109,7 +109,7 @@ header{
 }
 /* Media Query para celulares (pantallas de menos de 768px) */
 @media (max-width: 1024px) {
-    .mobile-visible{
+.mobile-visible{
     display: flex;
 }
 .mobile-invisible{
